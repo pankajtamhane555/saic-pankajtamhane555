@@ -130,7 +130,7 @@ def get_user_info(tool_input):
 def process_user_query(input):
     db = get_db()
     retrive_tool = create_retriever_tool(
-        db.as_retriever(),
+        db.as_retriever(k=2),
         name="retrieve_information",
         description="""Useful when welcoming a user or discussing their car preferences, provide tailored top two suggestions from the document. Highlight the recommended options and explain why they align with the user's unique preferences. Do not use this when user is decided to purchase a final car""")
 
